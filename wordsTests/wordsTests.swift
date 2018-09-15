@@ -13,10 +13,52 @@ import XCTest
 class wordsTests: XCTestCase {
     
     func testingWords(){
-        let n = Nass(nass: "لأنتم أشد رهبه")
+        let n = Nass(nass: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿ ١ ﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿ ٢ ﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿ ٣ ﴾ مَالِكِ يَوْمِ الدِّينِ ﴿ ٤ ﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿ ٥ ﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿ ٦ ﴾ ")
+    print (Array(n.nass))
+ //       print (n.removeTashkil())
+        print (Array(n.removeTashkil()))
+      print(n.getWords())
         print(n.normalize())
         
+        let mutableString = NSMutableString(string: n.nass) as CFMutableString
+        CFStringTransform(mutableString, nil, kCFStringTransformStripCombiningMarks, Bool(truncating: 0))
+        let normalized = (mutableString as NSMutableString).copy() as! NSString
+        
+        print(normalized)
+        
+        let components = normalized.components(separatedBy: .whitespacesAndNewlines)
+        let words = components.filter { !$0.isEmpty }
+        
+        print(words)
+        
+
+        }
+    
+    func testing2()  {
+        let pref = StemConst.suffixList
+        var prefNorm = [String]()
+        for i in pref {
+            let str = Nass(nass: i).normalize()
+            if i ==  "أف" {
+              let nono = Nass(nass: i).normalize()
+                print ("\(i)  ----> \(nono) ")
+            }
+                
+            print("\(i)  ----> \(str) ")
+            if !prefNorm.contains(str){prefNorm.append(str)}
+            
     }
+        print(prefNorm)
+    }
+    
+    func testingWord()  {
+       print( Word.getJithr(wrd : "لأقتلنك"))
+         print( Word.getJithr(wrd : "مقتول"))
+         print( Word.getJithr(wrd : "قتال"))
+         print( Word.getJithr(wrd : "قتلوكم"))
+         print( Word.getJithr(wrd : "اقتتل"))
+    }
+    
     
     override func setUp() {
         
