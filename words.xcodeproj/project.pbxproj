@@ -69,6 +69,8 @@
 		49E27FAE214E5D800045622E /* Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E27F97214E5D7F0045622E /* Get.swift */; };
 		49E27FAF214E5D800045622E /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E27F98214E5D7F0045622E /* Set.swift */; };
 		49E27FB0214E5D800045622E /* Any+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E27F99214E5D7F0045622E /* Any+Extensions.swift */; };
+		49E27FB8214EF7E10045622E /* FahresKalimat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E27FB7214EF7E10045622E /* FahresKalimat.swift */; };
+		49E27FBA214F03A60045622E /* DbKitab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E27FB9214F03A60045622E /* DbKitab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +154,8 @@
 		49E27F97214E5D7F0045622E /* Get.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Get.swift; sourceTree = "<group>"; };
 		49E27F98214E5D7F0045622E /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		49E27F99214E5D7F0045622E /* Any+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Any+Extensions.swift"; sourceTree = "<group>"; };
+		49E27FB7214EF7E10045622E /* FahresKalimat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FahresKalimat.swift; sourceTree = "<group>"; };
+		49E27FB9214F03A60045622E /* DbKitab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DbKitab.swift; path = ../../books/books/controller/DbKitab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,9 +204,11 @@
 		49E27EB4214D34DA0045622E /* words */ = {
 			isa = PBXGroup;
 			children = (
+				49E27FB9214F03A60045622E /* DbKitab.swift */,
 				49E27EDE214D4FCE0045622E /* StemConst.swift */,
 				49E27EDC214D35C20045622E /* Nass.swift */,
 				49E27EE0214D55C40045622E /* Kalima.swift */,
+				49E27FB7214EF7E10045622E /* FahresKalimat.swift */,
 				49E27EB5214D34DA0045622E /* AppDelegate.swift */,
 				49E27EB7214D34DA0045622E /* ViewController.swift */,
 				49E27EB9214D34DB0045622E /* Assets.xcassets */,
@@ -501,6 +507,7 @@
 				49E27F69214E5CD60045622E /* MNRecordSet.swift in Sources */,
 				49E27FAA214E5D800045622E /* Advance.swift in Sources */,
 				49E27F37214E5C190045622E /* Coding.swift in Sources */,
+				49E27FB8214EF7E10045622E /* FahresKalimat.swift in Sources */,
 				49E27FA5214E5D800045622E /* NominalTypeDescriptor.swift in Sources */,
 				49E27F39214E5C190045622E /* CoreFunctions.swift in Sources */,
 				49E27F38214E5C190045622E /* Expression.swift in Sources */,
@@ -512,6 +519,7 @@
 				49E27F40214E5C190045622E /* AggregateFunctions.swift in Sources */,
 				49E27F42214E5C190045622E /* SQLite-Bridging.m in Sources */,
 				49E27F34214E5C190045622E /* FTS5.swift in Sources */,
+				49E27FBA214F03A60045622E /* DbKitab.swift in Sources */,
 				49E27FA4214E5D800045622E /* RelativePointer.swift in Sources */,
 				49E27FA8214E5D800045622E /* Metadata+Struct.swift in Sources */,
 				49E27F32214E5C190045622E /* RTree.swift in Sources */,

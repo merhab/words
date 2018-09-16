@@ -12,7 +12,7 @@ class Nass : MNrecord{
     var kalimaBidaya : Kalima
     var kitabId : Int {
         get {
-            return kalimaBidaya.kitabId
+            return kalimaBidaya.mnKitabId
         }
     }
     var nassNormalized : String {
@@ -26,12 +26,6 @@ class Nass : MNrecord{
         }
     }
 
-    static let horof = "اأإآءؤئبتثجحخدذرزسشضصطظعغفقكلمنهويىة "
-    + "1234567890١٢٣٤٥٦٧٨٩٠"
-    static let alif = "اأإآؤئ"
-    
-    var kalim = [String]()
-    
     init(nass : String  , kalimaBidaya : Kalima) {
         self.nass = nass
         self.kalimaBidaya = kalimaBidaya
@@ -56,9 +50,17 @@ class Nass : MNrecord{
         return words
     }
     
-    func getNormalizedWords(text : String) -> [String] {
+    static func getNormalizedWords(text : String) -> [String] {
         let str = Nass.normalize(text: text)
         return Nass.getWords(text: str)
+    }
+    
+     func getNormalizedWords() -> [String] {
+        let str = Nass.normalize(text: nass)
+        return Nass.getWords(text: str)
+    }
+    func getWords() -> [String] {
+        return Nass.getWords(text: nass)
     }
     
     static func normalize(text : String)->String{
@@ -66,8 +68,8 @@ class Nass : MNrecord{
         let nassArray = Array(Nass.removeTashkil(text: text))
         var NormalizedArray = [Character]()
         for char in nassArray {
-            if Nass.horof.contains(char){
-                if Nass.alif.contains(char){
+            if StemConst.horof.contains(char){
+                if StemConst.alif.contains(char){
                     NormalizedArray.append("ء")
                     
                 }else if char == "ي"

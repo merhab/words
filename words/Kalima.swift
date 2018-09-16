@@ -8,26 +8,26 @@
 
 import Foundation
 class Kalima : MNrecord {
-    var kitabId = -1
-    var safhaId = -1
-    var tartibInSafha = -1.0
+    var mnKitabId = -1
+    var mnSafhaId = -1
+    var mnTartibInSafha = -1.0
     var kalimaDiscription : KalimaDescription?
-    var kalima : String
+    var text : String
     
-    init(kalima : String , kitabId : Int = -1 , safhaId : Int = -1 ,
+    init(text : String , kitabId : Int = -1 , safhaId : Int = -1 ,
          tartibInSafha : Double = -1.0 ) {
-        self.kalima = kalima
-        self.kitabId = kitabId
-        self.kitabId = kitabId
-        self.safhaId = safhaId
-        self.tartibInSafha = tartibInSafha
+        self.text = text
+        self.mnKitabId = kitabId
+        self.mnKitabId = kitabId
+        self.mnSafhaId = safhaId
+        self.mnTartibInSafha = tartibInSafha
     }
     func getPrefix(count : Int) -> String {
-        return String(kalima.prefix(count))
+        return String(text.prefix(count))
     }
     
     func getSuffix(count : Int) -> String {
-        return String(kalima.suffix(count))
+        return String(text.suffix(count))
     }
     static func getJithr(wrd : String) -> String {
      var str = getJithr1(wrd : wrd)
@@ -37,7 +37,7 @@ class Kalima : MNrecord {
     }
     static private func getJithr1(wrd : String) -> String {
 
-        let word = Kalima(kalima: wrd)
+        let word = Kalima(text: wrd)
         
            // print (word.getPrefix(count: 4))
             
@@ -48,10 +48,10 @@ class Kalima : MNrecord {
             for i in stride(from: StemConst.maxSuffix, to: 0, by: -1) {
                 let prefix = word.getSuffix(count: i)
                 if StemConst.suffixList.contains(prefix) {
-                    let endIndex = word.kalima.index(word.kalima.endIndex, offsetBy: -i)
-                    let truncated = word.kalima.substring(to: endIndex)
+                    let endIndex = word.text.index(word.text.endIndex, offsetBy: -i)
+                    let truncated = word.text.substring(to: endIndex)
                     if truncated.count>2 {
-                        word.kalima = truncated
+                        word.text = truncated
                         success = true
                         break
                     } else {
@@ -66,9 +66,9 @@ class Kalima : MNrecord {
                 for i in  stride(from: StemConst.maxPrefix, to: 0, by: -1)  {
                     let prefix = word.getPrefix(count: i)
                     if StemConst.prifixList.contains(prefix) {
-                        let t  = String(word.kalima.dropFirst(prefix.count))
+                        let t  = String(word.text.dropFirst(prefix.count))
                         if t.count>2 {
-                            word.kalima = t
+                            word.text = t
                             success = true
                             break
                         }else
@@ -86,7 +86,7 @@ class Kalima : MNrecord {
             
             
           //  print (word.word)
-        return word.kalima
+        return word.text
         }
     static private func getJithr2(wrd : String) -> String {
 
@@ -122,7 +122,7 @@ class Kalima : MNrecord {
         return String(array)
     }
     
- 
+  
     
 }
 
@@ -133,4 +133,22 @@ class KalimaDescription : MNrecord {
     var kalimaDhamir = ""
     var kalimaZamen = ""
     var kalimaJithr = ""
+}
+class KalimaTartib: MNrecord {
+   var idKalima = -1
+   var tartib = -1.0
+    var idKitab = -1
+    var idSafha = -1
+     init(kalima : Kalima) {
+
+        self.idKalima = kalima.ID
+        self.idKitab = kalima.mnKitabId
+        self.idSafha = kalima.mnSafhaId
+        self.tartib = kalima.mnTartibInSafha
+        
+        
+        
+    }
+    
+    
 }
