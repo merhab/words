@@ -7,18 +7,20 @@
 //
 
 import Foundation
-class Word {
-    var word : String
+class Kalima {
+    var kalimaId : KalimaIdentificator
+    var kalimaDiscription : KalimaDescription?
+    var kalima : String
     
-    init(word : String) {
-        self.word = word
+    init(kalima : String) {
+        self.kalima = kalima
     }
     func getPrefix(count : Int) -> String {
-        return String(word.prefix(count))
+        return String(kalima.prefix(count))
     }
     
     func getSuffix(count : Int) -> String {
-        return String(word.suffix(count))
+        return String(kalima.suffix(count))
     }
     static func getJithr(wrd : String) -> String {
      var str = getJithr1(wrd : wrd)
@@ -28,7 +30,7 @@ class Word {
     }
     static private func getJithr1(wrd : String) -> String {
 
-            let word = Word(word: wrd)
+            let word = Kalima(kalima: wrd)
            // print (word.getPrefix(count: 4))
             
            // print (word.getSuffix(count: 3))
@@ -38,10 +40,10 @@ class Word {
             for i in stride(from: StemConst.maxSuffix, to: 0, by: -1) {
                 let prefix = word.getSuffix(count: i)
                 if StemConst.suffixList.contains(prefix) {
-                    let endIndex = word.word.index(word.word.endIndex, offsetBy: -i)
-                    let truncated = word.word.substring(to: endIndex)
+                    let endIndex = word.kalima.index(word.kalima.endIndex, offsetBy: -i)
+                    let truncated = word.kalima.substring(to: endIndex)
                     if truncated.count>2 {
-                        word.word = truncated
+                        word.kalima = truncated
                         success = true
                         break
                     } else {
@@ -56,9 +58,9 @@ class Word {
                 for i in  stride(from: StemConst.maxPrefix, to: 0, by: -1)  {
                     let prefix = word.getPrefix(count: i)
                     if StemConst.prifixList.contains(prefix) {
-                        let t  = String(word.word.dropFirst(prefix.count))
+                        let t  = String(word.kalima.dropFirst(prefix.count))
                         if t.count>2 {
-                            word.word = t
+                            word.kalima = t
                             success = true
                             break
                         }else
@@ -76,7 +78,7 @@ class Word {
             
             
           //  print (word.word)
-        return word.word
+        return word.kalima
         }
     static private func getJithr2(wrd : String) -> String {
 
@@ -114,4 +116,18 @@ class Word {
     
  
     
+}
+struct KalimaIdentificator {
+    var ID : Int
+    var kitabId : Int
+    var safhaId : Int
+    var tartibInSafha : Double
+}
+struct KalimaDescription {
+    var ID : Int
+    var kalimaId : KalimaIdentificator
+    var kalimaType : String
+    var kalimaDhamir : String?
+    var kalimaTime : String?
+    var kalimaJithr : KalimaIdentificator
 }

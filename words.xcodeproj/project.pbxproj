@@ -14,7 +14,7 @@
 		49E27EC9214D34DC0045622E /* wordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E27EC8214D34DC0045622E /* wordsTests.swift */; };
 		49E27EDD214D35C20045622E /* Nass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E27EDC214D35C20045622E /* Nass.swift */; };
 		49E27EDF214D4FCE0045622E /* StemConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E27EDE214D4FCE0045622E /* StemConst.swift */; };
-		49E27EE1214D55C40045622E /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E27EE0214D55C40045622E /* Word.swift */; };
+		49E27EE1214D55C40045622E /* Kalima.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E27EE0214D55C40045622E /* Kalima.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,7 @@
 		49E27ECA214D34DC0045622E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E27EDC214D35C20045622E /* Nass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nass.swift; sourceTree = "<group>"; };
 		49E27EDE214D4FCE0045622E /* StemConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StemConst.swift; sourceTree = "<group>"; };
-		49E27EE0214D55C40045622E /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		49E27EE0214D55C40045622E /* Kalima.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kalima.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 			children = (
 				49E27EDE214D4FCE0045622E /* StemConst.swift */,
 				49E27EDC214D35C20045622E /* Nass.swift */,
-				49E27EE0214D55C40045622E /* Word.swift */,
+				49E27EE0214D55C40045622E /* Kalima.swift */,
 				49E27EB4214D34DA0045622E /* words */,
 				49E27EC7214D34DC0045622E /* wordsTests */,
 				49E27EB3214D34DA0045622E /* Products */,
@@ -206,7 +206,7 @@
 			files = (
 				49E27EB8214D34DA0045622E /* ViewController.swift in Sources */,
 				49E27EDF214D4FCE0045622E /* StemConst.swift in Sources */,
-				49E27EE1214D55C40045622E /* Word.swift in Sources */,
+				49E27EE1214D55C40045622E /* Kalima.swift in Sources */,
 				49E27EDD214D35C20045622E /* Nass.swift in Sources */,
 				49E27EB6214D34DA0045622E /* AppDelegate.swift in Sources */,
 			);

@@ -63,4 +63,10 @@ extension String {
         return words
     }
 }
+struct NassIdentificator {
+    var ID : Int
+    var kitabID : Int
+    var kalimaBidaya : Kalima
+    var kalimaNihaya : Kalima
+}
 

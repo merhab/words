@@ -52,11 +52,11 @@ class wordsTests: XCTestCase {
     }
     
     func testingWord()  {
-       print( Word.getJithr(wrd : "لأقتلنك"))
-         print( Word.getJithr(wrd : "مقتول"))
-         print( Word.getJithr(wrd : "قتال"))
-         print( Word.getJithr(wrd : "قتلوكم"))
-         print( Word.getJithr(wrd : "اقتتل"))
+       print( Kalima.getJithr(wrd : "لأقتلنك"))
+         print( Kalima.getJithr(wrd : "مقتول"))
+         print( Kalima.getJithr(wrd : "قتال"))
+         print( Kalima.getJithr(wrd : "قتلوكم"))
+         print( Kalima.getJithr(wrd : "اقتتل"))
     }
     
     

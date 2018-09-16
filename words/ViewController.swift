@@ -13,7 +13,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var textIn: NSTextField!
     @IBOutlet weak var resultLabel: NSTextField!
     @IBAction func getJithr(_ sender: Any) {
-        resultLabel.stringValue = Word.getJithr(wrd: textIn.stringValue)
+        resultLabel.stringValue = Kalima.getJithr(wrd: textIn.stringValue)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
