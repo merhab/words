@@ -8,12 +8,14 @@
 
 import Foundation
 class Kalima {
+    static let unknownKalimaIdentificator = KalimaIdentificator(ID: -1, kitabId: -1, safhaId: -1, tartibInSafha: -1)
     var kalimaId : KalimaIdentificator
     var kalimaDiscription : KalimaDescription?
     var kalima : String
     
-    init(kalima : String) {
+    init(kalima : String ,kalimaId : KalimaIdentificator ) {
         self.kalima = kalima
+        self.kalimaId = kalimaId
     }
     func getPrefix(count : Int) -> String {
         return String(kalima.prefix(count))
@@ -30,7 +32,7 @@ class Kalima {
     }
     static private func getJithr1(wrd : String) -> String {
 
-            let word = Kalima(kalima: wrd)
+        let word = Kalima(kalima: wrd , kalimaId: unknownKalimaIdentificator)
            // print (word.getPrefix(count: 4))
             
            // print (word.getSuffix(count: 3))
