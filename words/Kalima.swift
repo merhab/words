@@ -7,15 +7,20 @@
 //
 
 import Foundation
-class Kalima {
-    static let unknownKalimaIdentificator = KalimaIdentificator(ID: -1, kitabId: -1, safhaId: -1, tartibInSafha: -1)
-    var kalimaId : KalimaIdentificator
+class Kalima : MNrecord {
+    var kitabId = -1
+    var safhaId = -1
+    var tartibInSafha = -1.0
     var kalimaDiscription : KalimaDescription?
     var kalima : String
     
-    init(kalima : String ,kalimaId : KalimaIdentificator ) {
+    init(kalima : String , kitabId : Int = -1 , safhaId : Int = -1 ,
+         tartibInSafha : Double = -1.0 ) {
         self.kalima = kalima
-        self.kalimaId = kalimaId
+        self.kitabId = kitabId
+        self.kitabId = kitabId
+        self.safhaId = safhaId
+        self.tartibInSafha = tartibInSafha
     }
     func getPrefix(count : Int) -> String {
         return String(kalima.prefix(count))
@@ -32,7 +37,8 @@ class Kalima {
     }
     static private func getJithr1(wrd : String) -> String {
 
-        let word = Kalima(kalima: wrd , kalimaId: unknownKalimaIdentificator)
+        let word = Kalima(kalima: wrd)
+        
            // print (word.getPrefix(count: 4))
             
            // print (word.getSuffix(count: 3))
@@ -119,17 +125,12 @@ class Kalima {
  
     
 }
-struct KalimaIdentificator {
-    var ID : Int
-    var kitabId : Int
-    var safhaId : Int
-    var tartibInSafha : Double
-}
-struct KalimaDescription {
-    var ID : Int
-    var kalimaId : KalimaIdentificator
-    var kalimaType : String
-    var kalimaDhamir : String?
-    var kalimaTime : String?
-    var kalimaJithr : KalimaIdentificator
+
+class KalimaDescription : MNrecord {
+
+    var kalimaId = -1
+    var kalimaType = ""
+    var kalimaDhamir = ""
+    var kalimaZamen = ""
+    var kalimaJithr = ""
 }

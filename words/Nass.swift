@@ -7,10 +7,14 @@
 //
 
 import Foundation
-class Nass {
-    var nassIdentificator : NassIdentificator
-    static let unknownNassIdentificator = NassIdentificator(ID: -1, kitabID: -1, kalimaBidaya:Kalima(kalima:"", kalimaId: Kalima.unknownKalimaIdentificator), kalimaNihaya: Kalima(kalima:"", kalimaId: Kalima.unknownKalimaIdentificator))
+class Nass : MNrecord{
     var nass :String
+    var kalimaBidaya : Kalima
+    var kitabId : Int {
+        get {
+            return kalimaBidaya.kitabId
+        }
+    }
     var nassNormalized : String {
         get{
             return Nass.normalize(text: nass)
@@ -25,11 +29,13 @@ class Nass {
     static let horof = "اأإآءؤئبتثجحخدذرزسشضصطظعغفقكلمنهويىة "
     + "1234567890١٢٣٤٥٦٧٨٩٠"
     static let alif = "اأإآؤئ"
+    
     var kalim = [String]()
     
-    init(nass : String = "" , nassIdentificator : NassIdentificator = Nass.unknownNassIdentificator) {
+    init(nass : String  , kalimaBidaya : Kalima) {
         self.nass = nass
-        self.nassIdentificator = nassIdentificator
+        self.kalimaBidaya = kalimaBidaya
+
     }
     
     static func removeTashkil(text : String) -> String {
@@ -85,10 +91,5 @@ extension String {
         return words
     }
 }
-struct NassIdentificator {
-    var ID : Int
-    var kitabID : Int
-    var kalimaBidaya : Kalima
-    var kalimaNihaya : Kalima
-}
+
 
